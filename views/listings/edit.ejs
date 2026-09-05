@@ -5,7 +5,10 @@
 
         <h3>Edit your Listing</h3>
 
-        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT"
+         novalidate
+            class="needs-validation"
+            >
 
             <!-- Title -->
             <div class="mb-3">
@@ -16,7 +19,9 @@
                     value="<%= listing.title %>"
                     type="text"
                     class="form-control"
+                    required
                 />
+                <div class="valid-feedback">Title looks good!</div> 
             </div>
 
 
@@ -29,7 +34,9 @@
                 <textarea
                     name="listing[description]"
                     class="form-control"
+                    required
                 ><%= listing.description %></textarea>
+                <div class="invalid-feedback">  please enter a short description</div> 
             </div>
 
 
@@ -44,7 +51,9 @@
                     value="<%= listing.image.url %>"
                     type="text"
                     class="form-control"
+                    required
                 />
+                <div class="invalid-feedback">  please enter a short description</div>
             </div>
             
         <div class="row">
@@ -59,7 +68,10 @@
                     value="<%= listing.price %>"
                     type="number"
                     class="form-control"
+                    required
                 />
+                 <div class="invalid-feedback">  price should be valid </div> 
+    
             </div>
 
 
@@ -74,8 +86,10 @@
                     value="<%= listing.country %>"
                     type="text"
                     class="form-control"
+                    required
                 />
-            </div>
+                <div class="invalid-feedback">  country name should be valid </div> 
+            
         </div>
 
             <!-- Location -->
@@ -89,7 +103,9 @@
                     value="<%= listing.location %>"
                     type="text"
                     class="form-control"
+                    required
                 />
+                <div class="invalid-feedback">  location should be valid </div> 
             </div>
 
 
