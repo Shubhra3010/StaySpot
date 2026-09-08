@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 //define variable
 const Schema = mongoose.Schema; 
+const Review= require("./review.js");
 
 const listingSchema = new Schema({
     title :{
@@ -25,6 +26,20 @@ const listingSchema = new Schema({
     price: Number,
     location: String,
     country: String,
+    reviews: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Review",
+      },
+      
+    ],
+});
+
+//CREATING POST MONGOOSE MIDDLEWARE in which if listings get deleted so reviews get also delete for them
+listingSchema.post("findOneAndDelete", async(listings)=>{
+  if(listing){
+  await Review.deleteMany({_id : {$in: listing.reviews}});
+  }
 });
 
 //using above schema creating our  model
