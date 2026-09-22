@@ -4,7 +4,8 @@
      <br /><br/>
 <h3>Create a New Listing</h3>
 
-<form method="POST" action="/listings" novalidate class="needs-validation">
+<form method="POST" action="/listings" novalidate class="needs-validation" 
+enctype="multipart/form-data">
     <%#for spacing margin bottom 3 %>
     <div class="mb-3" >
     <lable for="title" class="form-label">Title</lable>
@@ -25,10 +26,11 @@
          <div class="invalid-feedback">  please enter a short description</div> 
     </div>
 
+    
     <div class="mb-3" >
     
-        <lable for="image"class="form-label">Image link</lable>
-        <input name="listing[image]" placeholder="enter image URL/Link"type="text"class="form-control"/>
+        <lable for="image"class="form-label">Upload listing Image</lable>
+        <input name="listing[image]" type="file"class="form-control"/>
     </div>
 
 <div class="row">

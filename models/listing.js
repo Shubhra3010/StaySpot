@@ -16,13 +16,9 @@ const listingSchema = new Schema({
     // result basis on true shows on left side link and false on right (v)
 
     image: {
-  url: {
-    type: String,
-    default: "https://images.unsplash.com/photo-1513010963904-2fefe6a92780"
-  },
-  filename: String
-},
-
+      url:String,
+      filename: String,
+    },
     price: Number,
     location: String,
     country: String,
@@ -31,14 +27,17 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Review",
       },
-      
     ],
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
 });
 
 //CREATING POST MONGOOSE MIDDLEWARE in which if listings get deleted so reviews get also delete for them
-listingSchema.post("findOneAndDelete", async(listings)=>{
+listingSchema.post("findOneAndDelete", async(listing)=>{
   if(listing){
-  await Review.deleteMany({_id : {$in: listing.reviews}});
+    await Review.deleteMany({_id : {$in: listing.reviews}});
   }
 });
 
