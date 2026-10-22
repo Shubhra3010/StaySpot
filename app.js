@@ -69,9 +69,9 @@ const sessionOptions={
 
 // creating basic api -API: A way for two different software/applications to communicate with each other.
 //Real life: Waiter in a restaurant takes your order to the kitchen and brings the food back → Waiter = API.
-// app.get("/", (req, res) => {
-//     res.send("Hi I am root");
-// });
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 //middleware-Middleware: A function that runs between the request and the final response to perform some task.
 //Real life: Security guard checks your ID before letting you enter a building → Security guard = Middleware.
 
