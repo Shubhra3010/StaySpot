@@ -1,8 +1,8 @@
 <% layout("/layouts/boilerplate") %> 
 
 <script>
-    const mapToken = "<%= process.env.MAP_TOKEN %>";
-    const listing = <%- JSON.stringify(listing).replace(/</g, "\\u003c") %>;
+    const mapToken = <%- JSON.stringify(process.env.MAP_TOKEN) %>;
+    const listing = <%- JSON.stringify(listing) %>;
 </script>
 <div class="row mt-3 justify-content-center">
     <div class="col-12 col-md-8 col-lg-6 listing-card">
