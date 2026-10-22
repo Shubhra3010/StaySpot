@@ -97,26 +97,43 @@ body {
    background-color: #fe424d !important;
    border:none !important;
 }
-/*Edit btn*/
-.edit-btn{
-   background-color: #fe424d !important;
-   border:none !important;
+/* Edit and Delete Buttons */
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
-/*Show Page*/
-.show-image{
-    height: 30;
-}
-.btns{
-  display:flex;  
-}
 
+/* Show Page */
 .show-card {
+    border: none !important;
     padding: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/*Map*/
-#map{
-    height:400px;
-width:150%;
+.show-img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 1rem !important;
+}
+
+.show-card .card-body {
+    padding: 1rem 0 !important;
+}
+
+.listing-card {
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+
+/* Map */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 1rem;
 }

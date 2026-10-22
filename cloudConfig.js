@@ -1,6 +1,5 @@
 const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-
+const { CloudinaryStorage } = require("multer-storage-cloudinary-v2");
 //configure means to join the backend from cloudinary
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
