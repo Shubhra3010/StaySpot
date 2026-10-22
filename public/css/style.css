@@ -111,7 +111,12 @@ body {
   display:flex;  
 }
 
-.show-card{
-    padding:left: 0;
-    padding:right: 0;
+.show-card {
+    padding: 0;
+}
+
+/*Map*/
+#map{
+    height:400px;
+width:150%;
 }

@@ -1,4 +1,9 @@
 {
+  "engines":{
+      
+      "node": "24.14.1"
+     
+  },
   "name": "StaySpot",
   "version": "1.0.0",
   "description": "",
@@ -11,8 +16,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.16.2",
     "cloudinary": "^2.11.0",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^18.0.2",
     "ejs": "^5.0.2",

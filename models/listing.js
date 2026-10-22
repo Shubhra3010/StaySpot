@@ -32,6 +32,21 @@ const listingSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    geometry:{
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    },
+  },
+  // category: {  // iska backend implement karna hai
+  //   type : String,
+  //   enum: ["mountains", "farms", "deserts"]
+  // }
 });
 
 //CREATING POST MONGOOSE MIDDLEWARE in which if listings get deleted so reviews get also delete for them
